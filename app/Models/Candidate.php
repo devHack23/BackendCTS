@@ -1,0 +1,36 @@
+<?php
+
+namespace App\Models;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
+use Illuminate\Database\Eloquent\Model;
+
+#[Fillable(['user_id', 'position_id', 'bio', 'photo_path'])]
+
+class Candidate extends Model
+{
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    use HasFactory;
+
+        /**
+        * Get the user that owns the candidate.
+        */
+   // ... tes imports
+
+public function user()
+{
+    return $this->belongsTo(User::class);
+}
+
+/**
+ * La relation inverse : Un candidat postule à une position.
+ */
+public function position()
+{
+    return $this->belongsTo(Position::class);
+}
+}
