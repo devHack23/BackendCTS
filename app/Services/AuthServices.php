@@ -38,7 +38,9 @@ class AuthServices
                 'last_name' => $data['last_name'],
                 'code' => $data['code'],
                 'email' => $data['email'],
+                
                 'password' => Hash::make($data['password']),
+                'password_confirmation' =>Hash::make($data['password_confirmation']),
             ]);
 
             $tokens = $this->generateTokens($user);

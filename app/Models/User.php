@@ -13,8 +13,8 @@ use App\Models\Vote;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
 
-#[Fillable(['fisrt_name','last_name','code', 'email','role', 'password'])]
-#[Hidden(['password', 'remember_token'])]
+#[Fillable(['fisrt_name','last_name','code', 'email','role', 'password','password_confirmation'])]
+#[Hidden(['password', 'remember_token','password_confirmation'])]
 class User extends Authenticatable implements JWTSubject
 {
     /** @use HasFactory<UserFactory> */
